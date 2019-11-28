@@ -1,7 +1,7 @@
 {
   "name": "taigasys/name-case",
   "description": "Библиотека для склонения русских и украинских имен",
-  "minimum-stability": "stable",
+  "type": "library",
   "license": "MIT",
   "authors": [
     {
