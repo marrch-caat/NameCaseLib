@@ -1,4 +1,7 @@
 <?php
+
+namespace NCL\Core;
+
 /**
  * @license Dual licensed under the MIT or GPL Version 2 licenses.
  * @package NameCaseLib
@@ -6,7 +9,7 @@
 
 /**
  * Класс содержит функции для работы со строками, которые используются в NCLNameCaseLib
- * 
+ *
  * @author Андрей Чайка <bymer3@gmail.com>
  * @version 0.4.1
  * @package NameCaseLib
@@ -15,7 +18,7 @@ class NCLStr
 {
     /**
      * Кодировка, в котороя работает система
-     * @var string 
+     * @var string
      */
     static $charset = 'utf-8';
 
@@ -24,9 +27,9 @@ class NCLStr
      * @param string $str строка
      * @param int $start начало подстроки
      * @param int $length длина подстроки
-     * @return int подстрока 
+     * @return int подстрока
      */
-    static function substr($str, $start, $length=null)
+    static function substr($str, $start, $length = null)
     {
         return mb_substr($str, $start, $length, NCLStr::$charset);
     }
@@ -62,7 +65,7 @@ class NCLStr
     {
         return mb_strtolower($str, NCLStr::$charset);
     }
-    
+
     /**
      * Переводит строку в верхний регистр
      * @param string $str строка
@@ -80,31 +83,31 @@ class NCLStr
      * @param int $offset начало поиска
      * @return int позиция подстроки в строке
      */
-    static function strrpos($haystack, $needle, $offset=null)
+    static function strrpos($haystack, $needle, $offset = null)
     {
         return mb_strrpos($haystack, $needle, $offset, NCLStr::$charset);
     }
-    
+
     /**
      * Проверяет в нижнем ли регистре находится строка
      * @param string $phrase строка
-     * @return bool в нижнем ли регистре строка 
+     * @return bool в нижнем ли регистре строка
      */
     static function isLowerCase($phrase)
     {
         return ($phrase == NCLStr::strtolower($phrase));
     }
-    
-     /**
+
+    /**
      * Проверяет в верхнем ли регистре находится строка
      * @param string $phrase строка
-     * @return bool в верхнем ли регистре строка 
+     * @return bool в верхнем ли регистре строка
      */
     static function isUpperCase($phrase)
     {
         return ($phrase == NCLStr::strtoupper($phrase));
     }
-    
+
     /**
      * Превращает строку в массив букв
      * @param string $phrase строка
@@ -114,13 +117,12 @@ class NCLStr
     {
         $resultArr = array();
         $stop = NCLStr::strlen($phrase);
-        for ($idx = 0; $idx < $stop; $idx++)
-        {
+        for ($idx = 0; $idx < $stop; $idx++) {
             $resultArr[] = NCLStr::substr($phrase, $idx, 1);
         }
         return $resultArr;
     }
-    
+
     /**
      * Соединяет массив букв в строку
      * @param array $lettersArr массив букв
@@ -130,17 +132,15 @@ class NCLStr
     {
         return implode('', $lettersArr);
     }
-    
+
     /**
      * Разбивает строку на части использую шаблон
      * @param string $pattern шаблон разбития
      * @param string $string строка, которую нужно разбить
-     * @return array разбитый массив 
+     * @return array разбитый массив
      */
     static function explode($pattern, $string)
     {
         return mb_split($pattern, $string);
     }
 }
-
-?>

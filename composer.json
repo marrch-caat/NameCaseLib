@@ -1,0 +1,27 @@
+{
+  "name": "taigasys/name-case",
+  "description": "Библиотека для склонения русских и украинских имен",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andriy Chaika",
+      "email": "andriy@chaika.in.ua"
+    },
+    {
+      "name": "Rabotyahoff"
+    },
+    {
+      "name": "Dmitry Kakunin",
+      "email": "dmitry.kakunin@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "NCL": "src/"
+    }
+  },
+  "require": {
+    "ext-mbstring": "*"
+  }
+}
