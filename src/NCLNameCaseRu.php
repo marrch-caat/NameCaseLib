@@ -11,6 +11,8 @@ namespace NCL;
  */
 
 use NCL\Core\NCLNameCaseCore;
+use NCL\Core\NCLNameCaseWord;
+use NCL\Core\NCLStr;
 
 /**
  * <b>NCL NameCase Russian Language</b>
