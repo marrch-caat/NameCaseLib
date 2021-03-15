@@ -12,6 +12,8 @@
 
 namespace NCL\Core;
 
+use NCL\NCLNameCaseRu;
+
 /**
  * <b>NCL NameCase Core</b>
  *
