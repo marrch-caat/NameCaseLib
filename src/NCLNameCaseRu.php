@@ -434,6 +434,44 @@ class NCLNameCaseRu extends NCLNameCaseCore
     }
 
     /**
+     * Склонение слов, которые NCL определил, как женские, с окончанием на "ие" и "ое"
+     *
+     * @return bool
+     */
+    protected function womanRule5(): bool
+    {
+        if ($this->Last(1) == "е") {
+            if ($this->in($this->Last(2, 1), 'ие')) {
+                $this->wordForms($this->workingWord, array('я', 'ю', 'е', 'ем', 'и'), 1);
+                $this->Rule(501);
+                return true;
+            } elseif ($this->in($this->Last(2, 1), 'ое')) {
+                $this->wordForms($this->workingWord, array('ого', 'ому', 'ое', 'им', 'ом'), 2);
+                $this->Rule(502);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Склонение слов, которые NCL определил, как женские, с окончанием на "ок"
+     *
+     * @return bool
+     */
+    protected function womanRule6(): bool
+    {
+        if ('ок' === $this->Last(2)) {
+            $this->wordForms($this->workingWord, array('ка', 'ку', 'ок', 'ом', 'ке'), 2);
+            $this->Rule(601);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * Функция пытается применить цепочку правил для мужских имен
      * @return boolean true - если было использовано правило из списка, false - если правило не было найденым
      */
@@ -475,7 +513,7 @@ class NCLNameCaseRu extends NCLNameCaseCore
      */
     protected function womanSecondName()
     {
-        return $this->RulesChain('woman', array(4));
+        return $this->RulesChain('woman', [4, 5, 6]);
     }
 
     /**
