@@ -222,7 +222,7 @@ class NCLNameCaseRu extends NCLNameCaseCore
                 $this->wordForms($this->workingWord, array('ьего', 'ьему', 'ьего', 'ьим', 'ьем'), 2);
                 $this->Rule(403);
                 return true;
-            } elseif (!$this->in($this->Last(2, 1), $this->vowels) or $this->Last(2, 1) == 'и') {
+            } elseif ($this->in($this->Last(2, 1), $this->vowels) or $this->Last(2, 1) == 'и') {
                 $this->wordForms($this->workingWord, array('ого', 'ому', 'ого', 'им', 'ом'), 2);
                 $this->Rule(404);
                 return true;
