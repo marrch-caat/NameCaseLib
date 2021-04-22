@@ -278,13 +278,13 @@ class NCLNameCaseRu extends NCLNameCaseCore
             $this->wordForms($this->workingWord, array('ца', 'цу', 'ца', 'цом', 'це'), 2);
             $this->Rule(604);
             return true;
-        } elseif ($this->in($this->Last(1), 'цсршмхт')) {
-            $this->wordForms($this->workingWord, array('а', 'у', 'а', 'ом', 'е'));
-            $this->Rule(602);
-            return true;
-        } elseif ($this->in($this->Last(1), $this->consonant)) {
+        } elseif ($this->in($this->Last(2), 'ин') || $this->in($this->Last(2), 'ов') || $this->in($this->Last(2), 'ев') || $this->in($this->Last(2), 'ын')){
             $this->wordForms($this->workingWord, array('а', 'у', 'а', 'ым', 'е'));
             $this->Rule(603);
+            return true;
+        } elseif ($this->in($this->Last(1), 'цсршмхтн')) {
+            $this->wordForms($this->workingWord, array('а', 'у', 'а', 'ом', 'е'));
+            $this->Rule(602);
             return true;
         }
         return false;
