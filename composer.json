@@ -1,5 +1,5 @@
 {
-  "name": "taigasys/name-case",
+  "name": "marrch-caat/name-case",
   "description": "Библиотека для склонения русских и украинских имен",
   "type": "library",
   "license": "MIT",
@@ -14,6 +14,10 @@
     {
       "name": "Dmitry Kakunin",
       "email": "dmitry.kakunin@gmail.com"
+    },
+    {
+      "name": "Alex MarrchCaat Martovskij",
+      "email": "marrchcaat+github@gmail.com"
     }
   ],
   "autoload": {
